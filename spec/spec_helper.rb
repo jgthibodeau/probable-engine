@@ -15,4 +15,9 @@ RSpec.configure do |config|
   end
 
   config.include FactoryGirl::Syntax::Methods
+
+  # update all permissions in test
+  config.before(:suite) do
+    Permission.update_permissions_table
+  end
 end
